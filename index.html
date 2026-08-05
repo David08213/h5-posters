@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>精选好物 - H5海报合集</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    -webkit-tap-highlight-color: transparent;
+}
+.container {
+    max-width: 430px;
+    margin: 0 auto;
+    background: #fff;
+    min-height: 100vh;
+    padding-bottom: 20px;
+}
+
+/* Top Banner */
+.top-banner {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 32px 20px 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.top-banner::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.06) 0%, transparent 50%);
+}
+.top-banner h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    position: relative;
+}
+.top-banner p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    position: relative;
+}
+
+/* Search Bar */
+.search-bar {
+    padding: 12px 16px;
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;
+}
+.search-input {
+    width: 100%;
+    height: 40px;
+    background: #f5f5f5;
+    border: none;
+    border-radius: 20px;
+    padding: 0 16px;
+    font-size: 14px;
+    color: #666;
+    outline: none;
+}
+.search-input::placeholder {
+    color: #aaa;
+}
+
+/* Category Tags */
+.category-section {
+    padding: 16px;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+.category-section::-webkit-scrollbar { display: none; }
+.category-tag {
+    flex-shrink: 0;
+    padding: 8px 16px;
+    background: #f5f5f5;
+    border-radius: 16px;
+    font-size: 13px;
+    color: #555;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+}
+.category-tag.active {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+/* Product Grid */
+.product-grid {
+    padding: 8px 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.product-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    border: 1px solid #f0f0f0;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.product-card:active {
+    transform: scale(0.98);
+}
+.product-card-img {
+    width: 100%;
+    aspect-ratio: 1;
+    background: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+.product-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+.product-card:hover .product-card-img img {
+    transform: scale(1.05);
+}
+.product-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #e60012;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+.product-card-info {
+    padding: 12px;
+}
+.product-card-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: #1a1a1a;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.product-card-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #e60012;
+}
+.product-card-price span {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 24px 16px;
+    color: #aaa;
+    font-size: 12px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+    <div class="top-banner">
+        <h1>精选好物</h1>
+        <p>8款品质好物 · 精心挑选</p>
+    </div>
+
+    <div class="search-bar">
+        <input type="text" class="search-input" placeholder="搜索商品">
+    </div>
+
+    <div class="category-section">
+        <div class="category-tag active">全部</div>
+        <div class="category-tag">美妆</div>
+        <div class="category-tag">服饰</div>
+        <div class="category-tag">鞋包</div>
+        <div class="category-tag">配饰</div>
+    </div>
+
+    <div class="product-grid">
+        <a href="口红/h5-poster.html" class="product-card">
+            <div class="product-card-img">
+                <img src="口红/主图/1.png" alt="口红" onerror="this.style.display='none'">
+                <div class="product-badge">热卖</div>
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">丝绒哑光高定口红</div>
+                <div class="product-card-price"><span>&yen;</span>159</div>
+            </div>
+        </a>
+
+        <a href="包包/h5-poster.html" class="product-card">
+            <div class="product-card-img">
+                <img src="包包/主图/01_主图 1：点击主图.png" alt="包包">
+                <div class="product-badge">新品</div>
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">复古菱格棕托特包</div>
+                <div class="product-card-price"><span>&yen;</span>299</div>
+            </div>
+        </a>
+
+        <a href="棕色菱格链条托特包女大容量/h5-poster.html" class="product-card">
+            <div class="product-card-img">
+                <img src="棕色菱格链条托特包女大容量/主图/01_主图 1：点击主图.png" alt="托特包">
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">棕色菱格链条托特包</div>
+                <div class="product-card-price"><span>&yen;</span>359</div>
+            </div>
+        </a>
+
+        <a href="天然蜜蜡DIY可调节国风项链/h5-poster.html" class="product-card">
+            <div class="product-card-img">
+                <img src="天然蜜蜡DIY可调节国风项链/主图/01_主图 1：点击主图.png" alt="项链">
+                <div class="product-badge">限量</div>
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">天然蜜蜡国风项链</div>
+                <div class="product-card-price"><span>&yen;</span>688</div>
+            </div>
+        </a>
+
+        <a href="香槟金印花改良长款气质旗袍/h5-poster.html" class="product-card">
+            <div class="product-card-img">
+                <img src="香槟金印花改良长款气质旗袍/主图/01_主图 1：主图点击款.png" alt="旗袍">
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">香槟金印花改良旗袍</div>
+                <div class="product-card-price"><span>&yen;</span>1,280</div>
+            </div>
+        </a>
+
+        <a href="云锦序深墨底真丝刺绣长款旗袍/h5-poster.html" class="product-card">
+            <div class="product-card-img">
+                <img src="云锦序深墨底真丝刺绣长款旗袍/主图/01_主图 1：首屏点击主图.png" alt="云锦旗袍">
+                <div class="product-badge">高定</div>
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">云锦序真丝刺绣旗袍</div>
+                <div class="product-card-price"><span>&yen;</span>2,680</div>
+            </div>
+        </a>
+
+        <a href="运动上衣/h5-poster.html" class="product-card">
+            <div class="product-card-img">
+                <img src="运动上衣/主图/01_主图 1：主图1-点击款.png" alt="运动上衣">
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">速干透气运动上衣</div>
+                <div class="product-card-price"><span>&yen;</span>199</div>
+            </div>
+        </a>
+
+        <a href="AEREN Airflow轻量缓震跑鞋/h5-poster.html" class="product-card">
+            <div class="product-card-img">
+                <img src="AEREN Airflow轻量缓震跑鞋/主图/01_主图 1：英雄款主图.png" alt="跑鞋">
+                <div class="product-badge">科技</div>
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">AEREN Airflow轻量跑鞋</div>
+                <div class="product-card-price"><span>&yen;</span>599</div>
+            </div>
+        </a>
+    </div>
+
+    <div class="footer">
+        已经到底啦 ~ 共 8 款精选商品
+    </div>
+
+</div>
+</body>
+</html>
