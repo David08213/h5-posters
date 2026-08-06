@@ -3,440 +3,336 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>回力粉色老爹鞋 - H5海报</title>
+<title>回力粉色老爹鞋</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: #f5f5f5;
-    color: #333;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Serif SC", "Helvetica Neue", serif;
+    background: #0a0a0a;
+    color: #e0d8c8;
     -webkit-tap-highlight-color: transparent;
     overflow-x: hidden;
 }
 .container {
     max-width: 430px;
     margin: 0 auto;
-    background: #fff;
+    background: #141414;
     min-height: 100vh;
     position: relative;
     padding-bottom: 80px;
 }
 
-/* Header */
 .header {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(20,20,20,0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding: 12px 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 0.5px solid rgba(212,175,55,0.15);
 }
 .header-title {
-    font-size: 16px;
-    font-weight: 600;
-    color: #1a1a1a;
+    font-size: 15px;
+    font-weight: 500;
+    color: #e0d8c8;
+    letter-spacing: 0.5px;
+}
+.header-back {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    display: flex; align-items: center; justify-content: center;
+    color: #e0d8c8; font-size: 16px; cursor: pointer; border: none;
 }
 .header-share {
-    width: 32px;
-    height: 32px;
+    width: 32px; height: 32px;
     border-radius: 50%;
-    background: #f0f0f0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
+    background: rgba(212,175,55,0.12);
+    display: flex; align-items: center; justify-content: center;
+    color: #d4af37; font-size: 14px; cursor: pointer; border: none;
 }
 
-/* Hero Carousel */
 .carousel-wrap {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    background: #fafafa;
+    position: relative; width: 100%; overflow: hidden;
+    background: #0a0a0a;
 }
 .carousel {
     display: flex;
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     touch-action: pan-y;
 }
 .slide {
-    min-width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+    min-width: 100%; display: flex;
+    align-items: center; justify-content: center;
+    padding: 16px;
 }
 .slide img {
-    width: 100%;
-    max-height: 420px;
+    width: 100%; max-height: 420px;
     object-fit: contain;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border-radius: 4px;
 }
 .carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 6px;
-    padding: 12px 0 16px;
+    display: flex; justify-content: center; gap: 8px;
+    padding: 10px 0 16px;
 }
 .dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #ddd;
-    transition: all 0.3s;
-    cursor: pointer;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.35s; cursor: pointer;
 }
 .dot.active {
-    width: 18px;
-    border-radius: 3px;
-    background: #1a1a1a;
+    width: 20px; border-radius: 3px;
+    background: #d4af37;
 }
 
-/* Product Info */
+.gold-line {
+    height: 0.5px; background: linear-gradient(90deg, transparent, rgba(212,175,55,0.4), transparent);
+    margin: 0 20px;
+}
+
 .info-section {
-    padding: 16px 20px 20px;
+    padding: 20px;
 }
-.price-row {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-    margin-bottom: 10px;
+.label-row {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 12px;
 }
-.price {
-    font-size: 28px;
-    font-weight: 700;
-    color: #e60012;
-    letter-spacing: -0.5px;
+.section-label {
+    font-size: 10px; letter-spacing: 3px; color: #d4af37; text-transform: uppercase;
 }
-.price-unit {
-    font-size: 14px;
-    color: #e60012;
-    font-weight: 500;
-}
-.original-price {
-    font-size: 14px;
-    color: #999;
-    text-decoration: line-through;
+.new-badge {
+    font-size: 10px; letter-spacing: 2px; color: #0a0a0a; background: #d4af37;
+    padding: 2px 8px; border-radius: 2px; font-weight: 500;
 }
 .product-title {
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 1.4;
-    color: #1a1a1a;
-    margin-bottom: 6px;
+    font-family: "Noto Serif SC", "STSong", Georgia, serif;
+    font-size: 22px; font-weight: 500; color: #f0e6cf;
+    line-height: 1.3; margin-bottom: 8px; letter-spacing: 1px;
 }
 .product-subtitle {
-    font-size: 13px;
-    color: #888;
-    line-height: 1.5;
-    margin-bottom: 12px;
+    font-size: 13px; color: rgba(224,216,200,0.5);
+    line-height: 1.5; margin-bottom: 16px; font-style: italic;
+}
+.price-row {
+    display: flex; align-items: baseline; gap: 6px; margin-bottom: 14px;
+}
+.price-symbol { font-size: 16px; color: #d4af37; font-weight: 400; }
+.price {
+    font-size: 34px; font-weight: 400; color: #d4af37;
+    letter-spacing: -1px; font-family: "Noto Serif SC", Georgia, serif;
+}
+.price-original {
+    font-size: 13px; color: rgba(224,216,200,0.3); text-decoration: line-through; margin-left: 6px;
 }
 .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    display: flex; flex-wrap: wrap; gap: 8px;
 }
 .tag {
-    display: inline-block;
-    padding: 4px 10px;
-    background: #f5f5f5;
-    border-radius: 4px;
-    font-size: 12px;
-    color: #666;
-    border: 1px solid #eee;
+    padding: 5px 12px;
+    background: rgba(212,175,55,0.08);
+    border: 0.5px solid rgba(212,175,55,0.2);
+    border-radius: 2px; font-size: 11px; color: #d4af37;
+    letter-spacing: 0.5px;
 }
 
-/* Section Divider */
+.trust-section {
+    margin: 4px 20px 20px; padding: 16px 20px;
+    background: rgba(255,255,255,0.02);
+    border: 0.5px solid rgba(212,175,55,0.1);
+    display: flex; justify-content: space-around;
+}
+.trust-item { text-align: center; }
+.trust-icon { font-size: 18px; margin-bottom: 4px; opacity: 0.6; }
+.trust-text { font-size: 10px; color: rgba(224,216,200,0.4); }
+
 .section-divider {
-    height: 8px;
-    background: #f5f5f5;
+    height: 8px; background: #0a0a0a;
 }
 
-/* Detail Section */
-.detail-section {
-    padding: 20px 0;
-}
+.detail-section { padding: 24px 0; }
 .section-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    display: flex; align-items: center; gap: 12px;
     padding: 0 20px 16px;
 }
-.section-header::before {
-    content: "";
-    width: 3px;
-    height: 16px;
-    background: #1a1a1a;
-    border-radius: 2px;
+.section-header-line {
+    width: 24px; height: 0.5px; background: #d4af37;
 }
 .section-title {
-    font-size: 15px;
-    font-weight: 600;
-    color: #1a1a1a;
+    font-size: 11px; font-weight: 400; letter-spacing: 3px;
+    color: #d4af37; text-transform: uppercase;
 }
-.detail-img-wrap {
-    width: 100%;
-    margin-bottom: 2px;
-}
-.detail-img-wrap img {
-    width: 100%;
-    display: block;
-}
+.detail-img-wrap { width: 100%; margin-bottom: 1px; }
+.detail-img-wrap img { width: 100%; display: block; }
 
-/* Long Image Section */
-.long-image-section {
-    padding: 20px 16px;
-}
-.long-image-section img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-}
+.long-image-section { padding: 20px 16px; }
+.long-image-section img { width: 100%; border-radius: 2px; }
 
-/* Trust Badges */
-.trust-section {
-    padding: 16px 20px;
-    display: flex;
-    justify-content: space-around;
-    border-top: 1px solid #f0f0f0;
-    border-bottom: 1px solid #f0f0f0;
-}
-.trust-item {
-    text-align: center;
-}
-.trust-icon {
-    font-size: 20px;
-    margin-bottom: 4px;
-}
-.trust-text {
-    font-size: 11px;
-    color: #888;
-}
-
-/* CTA Bar */
 .cta-bar {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 430px;
-    background: #fff;
-    border-top: 1px solid #eee;
-    padding: 8px 16px 12px;
-    display: flex;
-    gap: 10px;
-    align-items: center;
+    position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
+    width: 100%; max-width: 430px;
+    background: rgba(20,20,20,0.97);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-top: 0.5px solid rgba(212,175,55,0.15);
+    padding: 10px 16px 14px;
+    display: flex; gap: 10px; align-items: center;
     z-index: 200;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.04);
 }
 .btn-icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-    padding: 4px 8px;
+    display: flex; flex-direction: column; align-items: center; gap: 3px;
+    background: none; border: none; color: rgba(224,216,200,0.5); cursor: pointer;
+    padding: 4px 6px; font-family: inherit;
 }
-.btn-icon span:first-child { font-size: 18px; }
-.btn-icon span:last-child { font-size: 10px; color: #666; }
+.btn-icon .bi { font-size: 18px; }
+.btn-icon span:last-child { font-size: 10px; }
 .btn-cart {
-    flex: 1;
-    height: 44px;
-    border-radius: 22px;
-    border: 1px solid #1a1a1a;
-    background: #fff;
-    color: #1a1a1a;
-    font-size: 15px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+    flex: 1; height: 42px; border-radius: 2px;
+    border: 0.5px solid rgba(212,175,55,0.3);
+    background: transparent; color: #d4af37;
+    font-size: 14px; font-weight: 400; letter-spacing: 1px;
+    cursor: pointer; font-family: inherit;
 }
 .btn-buy {
-    flex: 1.5;
-    height: 44px;
-    border-radius: 22px;
-    border: none;
-    background: #e60012;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(230,0,18,0.3);
+    flex: 1.5; height: 42px; border-radius: 2px; border: none;
+    background: linear-gradient(135deg, #c8a030, #d4af37);
+    color: #0a0a0a; font-size: 14px; font-weight: 500; letter-spacing: 1px;
+    cursor: pointer; font-family: inherit;
 }
 
-/* Fade-in animation */
-.fade-in {
-    animation: fadeIn 0.6s ease forwards;
-    opacity: 0;
-}
-@keyframes fadeIn {
-    to { opacity: 1; }
-}
-
-/* Scroll reveal */
 .reveal {
-    opacity: 0;
-    transform: translateY(20px);
+    opacity: 0; transform: translateY(20px);
     transition: all 0.6s ease;
 }
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+.reveal.visible { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 <body>
 <div class="container">
 
-    <!-- Header -->
     <div class="header">
+        <button class="header-back" onclick="history.back()">&larr;</button>
         <div class="header-title">回力粉色老爹鞋</div>
-        <div class="header-share">&#8644;</div>
+        <div class="header-share">&#10247;</div>
     </div>
 
-    <!-- Hero Carousel -->
     <div class="carousel-wrap">
         <div class="carousel" id="carousel">
-            <div class="slide active"><img src="主图/1.png" alt="主图1"></div><div class="slide "><img src="主图/2.png" alt="主图2"></div><div class="slide "><img src="主图/3.png" alt="主图3"></div><div class="slide "><img src="主图/4.png" alt="主图4"></div><div class="slide "><img src="主图/5.png" alt="主图5"></div>
+            <div class="slide"><img src="主图/1.png" alt="主图1"></div><div class="slide"><img src="主图/2.png" alt="主图2"></div><div class="slide"><img src="主图/3.png" alt="主图3"></div><div class="slide"><img src="主图/4.png" alt="主图4"></div><div class="slide"><img src="主图/5.png" alt="主图5"></div>
         </div>
         <div class="carousel-dots" id="dots">
             <span class="dot active" data-index="0"></span><span class="dot " data-index="1"></span><span class="dot " data-index="2"></span><span class="dot " data-index="3"></span><span class="dot " data-index="4"></span>
         </div>
     </div>
 
-    <!-- Product Info -->
     <div class="info-section">
-        <div class="price-row">
-            <span class="price-unit">&yen;</span>
-            <span class="price">269</span>
-            <span class="original-price">269</span>
+        <div class="label-row">
+            <span class="section-label">FEATURED PRODUCT</span>
+            
         </div>
         <h1 class="product-title">回力粉色老爹鞋</h1>
         <p class="product-subtitle">经典回力 · 粉色复古潮流</p>
+        <div class="price-row">
+            <span class="price-symbol">CNY</span>
+            <span class="price">269</span>
+            <span class="price-original">269</span>
+        </div>
         <div class="tags">
             <span class="tag">回力</span><span class="tag">粉色</span><span class="tag">老爹鞋</span><span class="tag">复古</span>
         </div>
     </div>
 
-    <!-- Trust Badges -->
+    <div class="gold-line"></div>
+
     <div class="trust-section">
         <div class="trust-item">
-            <div class="trust-icon">&#128666;</div>
+            <div class="trust-icon">&#9992;</div>
             <div class="trust-text">极速发货</div>
         </div>
         <div class="trust-item">
-            <div class="trust-icon">&#128230;</div>
+            <div class="trust-icon">&#9733;</div>
             <div class="trust-text">正品保障</div>
         </div>
         <div class="trust-item">
-            <div class="trust-icon">&#128168;</div>
+            <div class="trust-icon">&#8635;</div>
             <div class="trust-text">七天退换</div>
         </div>
         <div class="trust-item">
-            <div class="trust-icon">&#127775;</div>
+            <div class="trust-icon">&#9670;</div>
             <div class="trust-text">品质严选</div>
         </div>
     </div>
 
     <div class="section-divider"></div>
 
-    <!-- Detail Images -->
     <div class="detail-section">
         <div class="section-header">
-            <div class="section-title">商品详情</div>
+            <div class="section-header-line"></div>
+            <div class="section-title">Product Details</div>
         </div>
         <div class="detail-img-wrap"><img src="详情图/1.png" alt="详情图" loading="lazy"></div><div class="detail-img-wrap"><img src="详情图/2.png" alt="详情图" loading="lazy"></div><div class="detail-img-wrap"><img src="详情图/3.png" alt="详情图" loading="lazy"></div><div class="detail-img-wrap"><img src="详情图/4.png" alt="详情图" loading="lazy"></div><div class="detail-img-wrap"><img src="详情图/5.png" alt="详情图" loading="lazy"></div><div class="detail-img-wrap"><img src="详情图/6.png" alt="详情图" loading="lazy"></div><div class="detail-img-wrap"><img src="详情图/7.png" alt="详情图" loading="lazy"></div><div class="detail-img-wrap"><img src="详情图/8.png" alt="详情图" loading="lazy"></div><div class="detail-img-wrap"><img src="详情图/9.png" alt="详情图" loading="lazy"></div><div class="detail-img-wrap"><img src="详情图/10.png" alt="详情图" loading="lazy"></div><div class="detail-img-wrap"><img src="详情图/11.png" alt="详情图" loading="lazy"></div><div class="detail-img-wrap"><img src="详情图/12.png" alt="详情图" loading="lazy"></div><div class="detail-img-wrap"><img src="详情图/13.png" alt="详情图" loading="lazy"></div><div class="detail-img-wrap"><img src="详情图/14.png" alt="详情图" loading="lazy"></div><div class="detail-img-wrap"><img src="详情图/15.png" alt="详情图" loading="lazy"></div><div class="detail-img-wrap"><img src="详情图/16.png" alt="详情图" loading="lazy"></div>
     </div>
 
-    <!-- Long Image (if exists) -->
-    <div class="long-image-section reveal"><img src="详情页长图.png" alt="详情页长图"></div>
+    <div class="long-image-section reveal"><img src="详情页长图.png" alt="详情页长图" loading="lazy"></div>
 
-    <!-- Bottom Spacer -->
     <div style="height: 40px;"></div>
 
 </div>
 
-<!-- Fixed CTA Bar -->
 <div class="cta-bar">
-    <div class="btn-icon">
-        <span>&#128172;</span>
+    <button class="btn-icon">
+        <span class="bi">&#9993;</span>
         <span>客服</span>
-    </div>
-    <div class="btn-icon">
-        <span>&#128722;</span>
-        <span>购物车</span>
-    </div>
+    </button>
+    <button class="btn-icon">
+        <span class="bi">&#9737;</span>
+        <span>收藏</span>
+    </button>
     <button class="btn-cart">加入购物车</button>
     <button class="btn-buy">立即购买</button>
 </div>
 
 <script>
 (function() {
-    // Carousel swipe logic
-    const carousel = document.getElementById('carousel');
-    const dots = document.querySelectorAll('.dot');
-    const slides = document.querySelectorAll('.slide');
-    let current = 0;
-    let startX = 0;
-    let isDragging = false;
+    var carousel = document.getElementById('carousel');
+    var dots = document.querySelectorAll('.dot');
+    var slides = document.querySelectorAll('.slide');
+    var current = 0;
+    var startX = 0;
 
     function goTo(index) {
         if (index < 0) index = slides.length - 1;
         if (index >= slides.length) index = 0;
         current = index;
         carousel.style.transform = 'translateX(-' + (current * 100) + '%)';
-        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
     }
 
-    dots.forEach((dot, i) => {
-        dot.addEventListener('click', () => goTo(i));
+    dots.forEach(function(dot, i) {
+        dot.addEventListener('click', function() { goTo(i); });
     });
 
-    // Touch swipe
-    carousel.addEventListener('touchstart', (e) => {
+    carousel.addEventListener('touchstart', function(e) {
         startX = e.touches[0].clientX;
-        isDragging = true;
     }, {passive: true});
 
-    carousel.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
-    }, {passive: true});
-
-    carousel.addEventListener('touchend', (e) => {
-        if (!isDragging) return;
-        isDragging = false;
-        const endX = e.changedTouches[0].clientX;
-        const diff = startX - endX;
+    carousel.addEventListener('touchend', function(e) {
+        var diff = startX - e.changedTouches[0].clientX;
         if (Math.abs(diff) > 50) {
-            if (diff > 0) goTo(current + 1);
-            else goTo(current - 1);
+            if (diff > 0) goTo(current + 1); else goTo(current - 1);
         }
     }, {passive: true});
 
-    // Auto-play
-    setInterval(() => goTo(current + 1), 4000);
+    setInterval(function() { goTo(current + 1); }, 4500);
 
-    // Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
+    var reveals = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
         });
     }, { threshold: 0.1 });
-    reveals.forEach(r => observer.observe(r));
+    reveals.forEach(function(r) { observer.observe(r); });
 })();
 </script>
 
