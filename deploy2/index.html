@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>精选好物 - H5海报合集</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    -webkit-tap-highlight-color: transparent;
+}
+.container {
+    max-width: 430px;
+    margin: 0 auto;
+    background: #fff;
+    min-height: 100vh;
+    padding-bottom: 20px;
+}
+
+/* Top Banner */
+.top-banner {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 32px 20px 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.top-banner::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.06) 0%, transparent 50%);
+}
+.top-banner h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    position: relative;
+}
+.top-banner p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    position: relative;
+}
+
+/* Banner Carousel */
+.banner-carousel-wrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #1a1a1a;
+}
+.banner-carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    touch-action: pan-y;
+}
+.banner-slide {
+    min-width: 100%;
+    position: relative;
+}
+.banner-slide img {
+    width: 100%;
+    display: block;
+}
+.banner-slide a {
+    display: block;
+    text-decoration: none;
+}
+.banner-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 0;
+    background: #1a1a1a;
+}
+.banner-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    transition: all 0.3s; cursor: pointer;
+}
+.banner-dot.active {
+    width: 18px; border-radius: 3px;
+    background: #ff4757;
+}
+
+/* Search Bar */
+.search-bar {
+    padding: 12px 16px;
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;
+}
+.search-input {
+    width: 100%;
+    height: 40px;
+    background: #f5f5f5;
+    border: none;
+    border-radius: 20px;
+    padding: 0 16px;
+    font-size: 14px;
+    color: #666;
+    outline: none;
+}
+.search-input::placeholder {
+    color: #aaa;
+}
+
+/* Category Tags */
+.category-section {
+    padding: 16px;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+.category-section::-webkit-scrollbar { display: none; }
+.category-tag {
+    flex-shrink: 0;
+    padding: 8px 16px;
+    background: #f5f5f5;
+    border-radius: 16px;
+    font-size: 13px;
+    color: #555;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.category-tag.active {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+/* Product Grid */
+.product-grid {
+    padding: 8px 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.product-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    border: 1px solid #f0f0f0;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.product-card:active {
+    transform: scale(0.98);
+}
+.product-card-img {
+    width: 100%;
+    aspect-ratio: 1;
+    background: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+.product-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.product-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #e60012;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+.product-card-info {
+    padding: 12px;
+}
+.product-card-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: #1a1a1a;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.product-card-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #e60012;
+}
+.product-card-price span {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 24px 16px;
+    color: #aaa;
+    font-size: 12px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+    <div class="top-banner">
+        <h1>精选好物</h1>
+        <p>21款品质好物 · 精心挑选</p>
+    </div>
+
+    <!-- Banner Carousel -->
+    <div class="banner-carousel-wrap">
+        <div class="banner-carousel" id="bannerCarousel">
+            <div class="banner-slide">
+                <a href="Apple_苹果iPhone17 国行全新正品手机/h5-poster.html">
+                    <img src="banner图/5fffb40d2ac7.jpg" alt="iPhone 17">
+                </a>
+            </div>
+            <div class="banner-slide">
+                <a href="乌木沉香持久香薰 室内除异味香氛/h5-poster.html">
+                    <img src="banner图/b247fb21e0a4.jpg" alt="乌木沉香香薰">
+                </a>
+            </div>
+            <div class="banner-slide">
+                <a href="海洋龙涎香盘香 家用持久留香赠香炉/h5-poster.html">
+                    <img src="banner图/b473c9d9b391.jpg" alt="海洋龙涎香盘香">
+                </a>
+            </div>
+            <div class="banner-slide">
+                <a href="经典方扣漆皮细高跟通勤单鞋/h5-poster.html">
+                    <img src="banner图/c897e4748d1d.jpg" alt="经典方扣高跟鞋">
+                </a>
+            </div>
+        </div>
+        <div class="banner-dots" id="bannerDots">
+            <span class="banner-dot active" data-index="0"></span>
+            <span class="banner-dot" data-index="1"></span>
+            <span class="banner-dot" data-index="2"></span>
+            <span class="banner-dot" data-index="3"></span>
+        </div>
+    </div>
+
+    <div class="search-bar">
+        <input type="text" class="search-input" placeholder="搜索商品">
+    </div>
+
+    <div class="category-section">
+        <div class="category-tag active">全部</div>
+        <div class="category-tag">美妆</div>
+        <div class="category-tag">服饰</div>
+        <div class="category-tag">鞋包</div>
+        <div class="category-tag">配饰</div>
+        <div class="category-tag">运动</div>
+        <div class="category-tag">数码</div>
+        <div class="category-tag">生活</div>
+    </div>
+
+    <div class="product-grid">
+        <!-- 美妆 -->
+        <a href="口红/h5-poster.html" class="product-card" data-cat="美妆">
+            <div class="product-card-img">
+                <img src="口红/主图/1.jpg" alt="口红" onerror="this.style.display='none'">
+                <div class="product-badge">热卖</div>
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">丝绒哑光高定口红</div>
+                <div class="product-card-price"><span>&yen;</span>159</div>
+            </div>
+        </a>
+
+        <a href="包包/h5-poster.html" class="product-card" data-cat="鞋包">
+            <div class="product-card-img">
+                <img src="包包/主图/01_主图 1：点击主图.jpg" alt="包包">
+                <div class="product-badge">新品</div>
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">复古菱格棕托特包</div>
+                <div class="product-card-price"><span>&yen;</span>299</div>
+            </div>
+        </a>
+
+        <a href="棕色菱格链条托特包女大容量/h5-poster.html" class="product-card" data-cat="鞋包">
+            <div class="product-card-img">
+                <img src="棕色菱格链条托特包女大容量/主图/01_主图 1：点击主图.jpg" alt="托特包">
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">棕色菱格链条托特包</div>
+                <div class="product-card-price"><span>&yen;</span>359</div>
+            </div>
+        </a>
+
+        <a href="天然蜜蜡DIY可调节国风项链/h5-poster.html" class="product-card" data-cat="配饰">
+            <div class="product-card-img">
+                <img src="天然蜜蜡DIY可调节国风项链/主图/01_主图 1：点击主图.jpg" alt="项链">
+                <div class="product-badge">限量</div>
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">天然蜜蜡国风项链</div>
+                <div class="product-card-price"><span>&yen;</span>688</div>
+            </div>
+        </a>
+
+        <a href="香槟金印花改良长款气质旗袍/h5-poster.html" class="product-card" data-cat="服饰">
+            <div class="product-card-img">
+                <img src="香槟金印花改良长款气质旗袍/主图/01_主图 1：主图点击款.jpg" alt="旗袍">
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">香槟金印花改良旗袍</div>
+                <div class="product-card-price"><span>&yen;</span>1,280</div>
+            </div>
+        </a>
+
+        <a href="云锦序深墨底真丝刺绣长款旗袍/h5-poster.html" class="product-card" data-cat="服饰">
+            <div class="product-card-img">
+                <img src="云锦序深墨底真丝刺绣长款旗袍/主图/01_主图 1：首屏点击主图.jpg" alt="云锦旗袍">
+                <div class="product-badge">高定</div>
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">云锦序真丝刺绣旗袍</div>
+                <div class="product-card-price"><span>&yen;</span>2,680</div>
+            </div>
+        </a>
+
+        <a href="运动上衣/h5-poster.html" class="product-card" data-cat="运动">
+            <div class="product-card-img">
+                <img src="运动上衣/主图/01_主图 1：主图1-点击款.jpg" alt="运动上衣">
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">速干透气运动上衣</div>
+                <div class="product-card-price"><span>&yen;</span>199</div>
+            </div>
+        </a>
+
+        <a href="AEREN Airflow轻量缓震跑鞋/h5-poster.html" class="product-card" data-cat="鞋包">
+            <div class="product-card-img">
+                <img src="AEREN Airflow轻量缓震跑鞋/主图/01_主图 1：英雄款主图.jpg" alt="跑鞋">
+                <div class="product-badge">科技</div>
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">AEREN Airflow轻量跑鞋</div>
+                <div class="product-card-price"><span>&yen;</span>599</div>
+            </div>
+        </a>
+
+        <a href="1.法式慵懒纯色套装/h5-poster.html" class="product-card" data-cat="服饰">
+            <div class="product-card-img">
+                <img src="1.法式慵懒纯色套装/主图/1.jpg" alt="法式套装">
+                <div class="product-badge">新品</div>
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">法式慵懒纯色套装</div>
+                <div class="product-card-price"><span>&yen;</span>259</div>
+            </div>
+        </a>
+
+        <a href="4.金色花纹短袖立领旗袍/h5-poster.html" class="product-card" data-cat="服饰">
+            <div class="product-card-img">
+                <img src="4.金色花纹短袖立领旗袍/主图/1.jpg" alt="金色旗袍">
+                <div class="product-badge">高定</div>
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">金色花纹短袖立领旗袍</div>
+                <div class="product-card-price"><span>&yen;</span>980</div>
+            </div>
+        </a>
+
+        <a href="9.YSL小金条皮革哑光口红/h5-poster.html" class="product-card" data-cat="美妆">
+            <div class="product-card-img">
+                <img src="9.YSL小金条皮革哑光口红/主图/1.jpg" alt="YSL口红">
+                <div class="product-badge">热卖</div>
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">YSL小金条皮革哑光口红</div>
+                <div class="product-card-price"><span>&yen;</span>329</div>
+            </div>
+        </a>
+
+        <a href="15.回力粉色老爹鞋/h5-poster.html" class="product-card" data-cat="鞋包">
+            <div class="product-card-img">
+                <img src="15.回力粉色老爹鞋/主图/1.jpg" alt="回力老爹鞋">
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">回力粉色老爹鞋</div>
+                <div class="product-card-price"><span>&yen;</span>269</div>
+            </div>
+        </a>
+
+        <a href="14.粉底液无痕无钢圈内衣/h5-poster.html" class="product-card" data-cat="配饰">
+            <div class="product-card-img">
+                <img src="14.粉底液无痕无钢圈内衣/主图/1.jpg" alt="无痕内衣">
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">无痕无钢圈舒适内衣</div>
+                <div class="product-card-price"><span>&yen;</span>129</div>
+            </div>
+        </a>
+
+        <a href="连体运动服/h5-poster.html" class="product-card" data-cat="运动">
+            <div class="product-card-img">
+                <img src="连体运动服/主图/01_1.jpg" alt="连体运动服">
+                <div class="product-badge">新品</div>
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">修身连体运动服</div>
+                <div class="product-card-price"><span>&yen;</span>239</div>
+            </div>
+        </a>
+
+        <a href="7.高筒运动压缩袜护腿袜/h5-poster.html" class="product-card" data-cat="运动">
+            <div class="product-card-img">
+                <img src="7.高筒运动压缩袜护腿袜/主图/1.jpg" alt="压缩袜">
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">高筒运动压缩护腿袜</div>
+                <div class="product-card-price"><span>&yen;</span>79</div>
+            </div>
+        </a>
+
+        <a href="3.萌趣元气儿童长袖卫衣卫裤两件套/h5-poster.html" class="product-card" data-cat="服饰">
+            <div class="product-card-img">
+                <img src="3.萌趣元气儿童长袖卫衣卫裤两件套/主图/1.jpg" alt="儿童套装">
+                <div class="product-badge">萌趣</div>
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">萌趣元气儿童卫衣卫裤套装</div>
+                <div class="product-card-price"><span>&yen;</span>159</div>
+            </div>
+        </a>
+
+        <!-- ===== 5 NEW PRODUCTS ===== -->
+
+        <a href="2025新款耳夹式无线蓝牙耳机/h5-poster.html" class="product-card" data-cat="数码">
+            <div class="product-card-img">
+                <img src="2025新款耳夹式无线蓝牙耳机/主图/01_主图 1：点击主图.jpg" alt="蓝牙耳机">
+                <div class="product-badge">NEW</div>
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">2025新款耳夹式蓝牙耳机</div>
+                <div class="product-card-price"><span>&yen;</span>199</div>
+            </div>
+        </a>
+
+        <a href="Apple_苹果iPhone17 国行全新正品手机/h5-poster.html" class="product-card" data-cat="数码">
+            <div class="product-card-img">
+                <img src="Apple_苹果iPhone17 国行全新正品手机/主图/01_主图 1：点击主图.jpg" alt="iPhone 17">
+                <div class="product-badge">NEW</div>
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">Apple iPhone17 国行正品</div>
+                <div class="product-card-price"><span>&yen;</span>5,999</div>
+            </div>
+        </a>
+
+        <a href="乌木沉香持久香薰 室内除异味香氛/h5-poster.html" class="product-card" data-cat="生活">
+            <div class="product-card-img">
+                <img src="乌木沉香持久香薰 室内除异味香氛/主图/01_主图 1：点击主图.jpg" alt="乌木沉香">
+                <div class="product-badge">NEW</div>
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">乌木沉香持久香薰</div>
+                <div class="product-card-price"><span>&yen;</span>99</div>
+            </div>
+        </a>
+
+        <a href="海洋龙涎香盘香 家用持久留香赠香炉/h5-poster.html" class="product-card" data-cat="生活">
+            <div class="product-card-img">
+                <img src="海洋龙涎香盘香 家用持久留香赠香炉/主图/01_主图 1：点击主图.jpg" alt="龙涎香盘香">
+                <div class="product-badge">NEW</div>
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">海洋龙涎香盘香 赠香炉</div>
+                <div class="product-card-price"><span>&yen;</span>69</div>
+            </div>
+        </a>
+
+        <a href="经典方扣漆皮细高跟通勤单鞋/h5-poster.html" class="product-card" data-cat="鞋包">
+            <div class="product-card-img">
+                <img src="经典方扣漆皮细高跟通勤单鞋/主图/01_主图 1：点击主图.jpg" alt="方扣高跟鞋">
+                <div class="product-badge">NEW</div>
+            </div>
+            <div class="product-card-info">
+                <div class="product-card-title">经典方扣漆皮细高跟单鞋</div>
+                <div class="product-card-price"><span>&yen;</span>299</div>
+            </div>
+        </a>
+    </div>
+
+    <div class="footer">
+        已经到底啦 ~ 共 21 款精选商品
+    </div>
+
+</div>
+
+<!-- Banner Carousel Script -->
+<script>
+(function() {
+    var carousel = document.getElementById('bannerCarousel');
+    var dots = document.querySelectorAll('.banner-dot');
+    var slides = document.querySelectorAll('.banner-slide');
+    var current = 0;
+    var startX = 0;
+    var timer = null;
+
+    function goTo(index) {
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+        current = index;
+        carousel.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
+    }
+
+    dots.forEach(function(dot, i) {
+        dot.addEventListener('click', function() { goTo(i); resetTimer(); });
+    });
+
+    carousel.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+        clearInterval(timer);
+    }, {passive: true});
+
+    carousel.addEventListener('touchend', function(e) {
+        var diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) goTo(current + 1); else goTo(current - 1);
+        }
+        resetTimer();
+    }, {passive: true});
+
+    function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(function() { goTo(current + 1); }, 3500);
+    }
+    resetTimer();
+})();
+</script>
+
+<!-- Category Filter Script -->
+<script>
+(function() {
+    var tags = document.querySelectorAll('.category-tag');
+    var cards = document.querySelectorAll('.product-card');
+
+    tags.forEach(function(tag) {
+        tag.addEventListener('click', function() {
+            tags.forEach(function(t) { t.classList.remove('active'); });
+            tag.classList.add('active');
+            var cat = tag.textContent.trim();
+            cards.forEach(function(card) {
+                if (cat === '全部') {
+                    card.style.display = '';
+                } else {
+                    var cardCat = card.getAttribute('data-cat');
+                    card.style.display = (cardCat === cat) ? '' : 'none';
+                }
+            });
+        });
+    });
+})();
+</script>
+
+</body>
+</html>
